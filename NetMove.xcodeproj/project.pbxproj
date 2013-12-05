@@ -141,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE540DD176172D100A1B192 /* StackMob-v2.2.0 */,
-				DE4BCB6D161638D4003F4A66 /* user-object */,
+				DE4BCB6D161638D4003F4A66 /* NetMove */,
 				DE4BCB66161638D4003F4A66 /* Frameworks */,
 				DE4BCB64161638D4003F4A66 /* Products */,
 			);
@@ -173,7 +173,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DE4BCB6D161638D4003F4A66 /* user-object */ = {
+		DE4BCB6D161638D4003F4A66 /* NetMove */ = {
 			isa = PBXGroup;
 			children = (
 				8E0F70C5184F1D6A0007602A /* mydatamodel.xcdatamodeld */,
@@ -188,7 +188,7 @@
 				DEAA26C4177A271700A6F62F /* User.h */,
 				DEAA26C5177A271700A6F62F /* User.m */,
 			);
-			path = "user-object";
+			path = NetMove;
 			sourceTree = "<group>";
 		};
 		DE4BCB6E161638D4003F4A66 /* Supporting Files */ = {
@@ -447,8 +447,8 @@
 					/Users/arthur/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "user-object/NetMove-Prefix.pch";
-				INFOPLIST_FILE = "user-object/NetMove-Info.plist";
+				GCC_PREFIX_HEADER = "NetMove/NetMove-Prefix.pch";
+				INFOPLIST_FILE = "NetMove/NetMove-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/StackMob-v2.2.0\"",
@@ -468,8 +468,8 @@
 					/Users/arthur/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "user-object/NetMove-Prefix.pch";
-				INFOPLIST_FILE = "user-object/NetMove-Info.plist";
+				GCC_PREFIX_HEADER = "NetMove/NetMove-Prefix.pch";
+				INFOPLIST_FILE = "NetMove/NetMove-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/StackMob-v2.2.0\"",
