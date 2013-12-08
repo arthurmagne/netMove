@@ -15,6 +15,8 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "SMTwitterCredentials.h"
+
 
 @class SMClient;
 
@@ -23,19 +25,26 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UILabel *errorMsg;
 
 @property (weak, nonatomic) IBOutlet UIButton *facebookSignBtn;
+@property (nonatomic, strong) SMTwitterCredentials *twitterCredentials;
 @property (strong, nonatomic) SMClient *client;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 
 
-- (IBAction)btnClickHandler:(id)sender;
+- (IBAction)btnClickHandlerFacebook:(id)sender;
+
+- (IBAction)btnClickHandlerTwitter:(id)sender;
 
 - (IBAction)login:(id)sender;
 
 - (IBAction)checkStatus:(id)sender;
 
 - (IBAction)logout:(id)sender;
+
+- (IBAction)signUpBtn:(id)sender;
+
 
 @end

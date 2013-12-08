@@ -15,10 +15,12 @@
  */
 
 #import "NMSignInViewController.h"
+#import "NMSelectSportsViewController.h"
 #import "AppDelegate.h"
 #import "StackMob.h"
 #import "SMDataStore.h"
 #import "User.h"
+
 
 @interface NMSignInViewController ()
 
@@ -29,7 +31,10 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize usernameField = _usernameField;
 @synthesize passwordField = _passwordField;
+@synthesize errorMsg = _errorMsg;
 @synthesize client = _client;
+@synthesize twitterCredentials = _twitterCredentials;
+
 
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -49,6 +54,9 @@
             [self sessionStateChanged:session state:status error:error];
         }];
     }
+    
+    self.twitterCredentials = [[SMTwitterCredentials alloc] initWithTwitterConsumerKey:@"37164VFNHZsIR8NP2eVA" secret:@"DCmIYm8hCTybsdbqpsOPmuMiL6UYougUeliEhAV20"];
+
     
     self.managedObjectContext = [[[SMClient defaultClient] coreDataStore] contextForCurrentThread];
     
@@ -92,13 +100,17 @@
     [self.client loginWithUsername:self.usernameField.text password:self.passwordField.text onSuccess:^(NSDictionary *results) {
         
         NSLog(@"Login Success %@",results);
+        self.errorMsg.text = @"";
+        
+        [self performSegueWithIdentifier:@"loginSegue" sender:self];
+
         
         /* Uncomment the following if you are using Core Data integration and want to retrieve a managed object representation of the user object.  Store the resulting object or object ID for future use.
          
          Be sure to declare variables you are referencing in this block with the __block storage type modifier, including the managedObjectContext property.
          */
         
-        /* // Edit entity name and predicate if you are not using the default user schema with username primary key field.
+         // Edit entity name and predicate if you are not using the default user schema with username primary key field.
          NSFetchRequest *userFetch = [[NSFetchRequest alloc] initWithEntityName:@"User"];
          [userFetch setPredicate:[NSPredicate predicateWithFormat:@"username == %@", [results objectForKey:@"username"]]];
          [self.managedObjectContext executeFetchRequest:userFetch onSuccess:^(NSArray *results) {
@@ -107,11 +119,12 @@
          NSLog(@"Fetched user object: %@", userObject);
          } onFailure:^(NSError *error) {
          NSLog(@"Error fetching user object: %@", error);
-         }];*/
+         }];
          
         
     } onFailure:^(NSError *error) {
         NSLog(@"Login Fail: %@",error);
+        self.errorMsg.text = @"Invalid username/password";
     }];
 }
 - (IBAction)checkStatus:(id)sender {
@@ -135,7 +148,7 @@
         NSLog(@"Logout Fail: %@",error);
     }];
 }
-- (IBAction)btnClickHandler:(id)sender {
+- (IBAction)btnClickHandlerFacebook:(id)sender {
     if ([self.client isLoggedIn]) {
         [self logoutUser];
     } else {
@@ -144,6 +157,44 @@
         }];
     }
 }
+
+/* TODO -> Same as facebook : connection at viewDidLoad OUPAS (stay logged in!)*/
+- (IBAction)btnClickHandlerTwitter:(id)sender {
+    // This will usually return true if you are using the simulator, even if there are no accounts
+    if (self.twitterCredentials.twitterAccountsAvailable) {
+        
+        /*
+         SMTwitterCredentials method for Twitter auth workflow.
+         Pass nil for username to show a pop-up to the user and allow them to select from the available accounts.
+         Pass an account username to search and use that account without any user interaction. Great technique for a "stay logged in" feature
+         */
+        // So the nil value must be change with an account username
+        [self.twitterCredentials retrieveTwitterCredentialsForAccount:nil onSuccess:^(NSString *token, NSString *secret, NSDictionary *fullResponse) {
+            
+            /*
+             StackMob method to login with Twitter token and secret.  A StackMob user will be created with the username provided if one doesn't already exist attached to the provided credentials.
+             */
+            [[SMClient defaultClient] loginWithTwitterToken:token twitterSecret:secret createUserIfNeeded:YES usernameForCreate:fullResponse[@"screen_name"] onSuccess:^(NSDictionary *result) {
+                NSLog(@"Successful Login with Twitter: %@", result);
+                // We only use the username : screen_name
+                [self performSegueWithIdentifier:@"loginSegue" sender:self];
+
+            } onFailure:^(NSError *error) {
+                NSLog(@"Login failed: %@", error);
+            }];
+            
+        } onFailure:^(NSError *error) {
+            NSLog(@"Twitter Auth Error: %@", error);
+        }];
+        
+    } else {
+        // Handle no Twitter accounts available on device
+        NSLog(@"No Twitter accounts found on device.");
+        self.errorMsg.text = @"No Twitter accounts found on device.";
+    }
+    
+}
+
 - (void)loginUserWithFacebook {
     
     /*
@@ -169,6 +220,8 @@
 
                  
                  [self updateView];
+                 [self performSegueWithIdentifier:@"loginSegue" sender:self];
+
              } onFailure:^(NSError *error) {
                  NSLog(@"Error: %@", error);
              }];
@@ -181,13 +234,14 @@
 }
 
 - (void)logoutUser {
-    
+    if([self.client isLoggedIn]) {
     [self.client logoutOnSuccess:^(NSDictionary *result) {
         NSLog(@"Logged out of StackMob");
         [FBSession.activeSession closeAndClearTokenInformation];
     } onFailure:^(NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+    }
 }
 
 - (void)sessionStateChanged:(FBSession *)session
@@ -220,4 +274,8 @@
     }
 }
 
+
+- (IBAction)signUpBtn:(id)sender {
+    self.errorMsg.text = @"";
+}
 @end

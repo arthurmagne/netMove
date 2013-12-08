@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1D24A69A16CCB04300604C66 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D24A69916CCB04300604C66 /* CoreLocation.framework */; };
+		8E06B2DA1850A3DE00303423 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E06B2D91850A3DE00303423 /* Social.framework */; };
+		8E06B2DC1850A41800303423 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E06B2DB1850A41800303423 /* Twitter.framework */; };
+		8E06B2E7185113D300303423 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E06B2E0185113D300303423 /* NSData+Base64.m */; };
+		8E06B2E8185113D300303423 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E06B2E2185113D300303423 /* OAuth+Additions.m */; };
+		8E06B2E9185113D300303423 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E06B2E4185113D300303423 /* OAuthCore.m */; };
+		8E06B2EA185113D300303423 /* SMTwitterCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E06B2E6185113D300303423 /* SMTwitterCredentials.m */; };
+		8E06B2F018538F0000303423 /* NMSelectSportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E06B2EF18538F0000303423 /* NMSelectSportsViewController.m */; };
+		8E06B2F61853DE9D00303423 /* Sport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E06B2F51853DE9D00303423 /* Sport.m */; };
 		8E0F70CB184F1D6A0007602A /* mydatamodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F70C5184F1D6A0007602A /* mydatamodel.xcdatamodeld */; };
 		8E0F70CC184F1D6A0007602A /* NMSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F70C8184F1D6A0007602A /* NMSignInViewController.m */; };
 		8E0F70CD184F1D6A0007602A /* NMSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F70CA184F1D6A0007602A /* NMSignUpViewController.m */; };
@@ -33,6 +41,20 @@
 
 /* Begin PBXFileReference section */
 		1D24A69916CCB04300604C66 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8E06B2D91850A3DE00303423 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8E06B2DB1850A41800303423 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		8E06B2DF185113D300303423 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		8E06B2E0185113D300303423 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		8E06B2E1185113D300303423 /* OAuth+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAuth+Additions.h"; sourceTree = "<group>"; };
+		8E06B2E2185113D300303423 /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
+		8E06B2E3185113D300303423 /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
+		8E06B2E4185113D300303423 /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
+		8E06B2E5185113D300303423 /* SMTwitterCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTwitterCredentials.h; sourceTree = "<group>"; };
+		8E06B2E6185113D300303423 /* SMTwitterCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTwitterCredentials.m; sourceTree = "<group>"; };
+		8E06B2EE18538F0000303423 /* NMSelectSportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMSelectSportsViewController.h; sourceTree = "<group>"; };
+		8E06B2EF18538F0000303423 /* NMSelectSportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSelectSportsViewController.m; sourceTree = "<group>"; };
+		8E06B2F41853DE9D00303423 /* Sport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sport.h; sourceTree = "<group>"; };
+		8E06B2F51853DE9D00303423 /* Sport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sport.m; sourceTree = "<group>"; };
 		8E0F70C6184F1D6A0007602A /* mydatamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mydatamodel.xcdatamodel; sourceTree = "<group>"; };
 		8E0F70C7184F1D6A0007602A /* NMSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMSignInViewController.h; sourceTree = "<group>"; };
 		8E0F70C8184F1D6A0007602A /* NMSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSignInViewController.m; sourceTree = "<group>"; };
@@ -119,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E06B2DC1850A41800303423 /* Twitter.framework in Frameworks */,
+				8E06B2DA1850A3DE00303423 /* Social.framework in Frameworks */,
 				8E0F70D2184F1DC50007602A /* Accounts.framework in Frameworks */,
 				8E0F70D3184F1DC50007602A /* AdSupport.framework in Frameworks */,
 				8E0F70CF184F1DB80007602A /* FacebookSDK.framework in Frameworks */,
@@ -137,9 +161,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E06B2DD185113D300303423 /* SMTwitterCredentials */ = {
+			isa = PBXGroup;
+			children = (
+				8E06B2DE185113D300303423 /* OAuthCore */,
+				8E06B2E5185113D300303423 /* SMTwitterCredentials.h */,
+				8E06B2E6185113D300303423 /* SMTwitterCredentials.m */,
+			);
+			name = SMTwitterCredentials;
+			path = ../../../../Downloads/twitter/SMTwitterCredentials;
+			sourceTree = "<group>";
+		};
+		8E06B2DE185113D300303423 /* OAuthCore */ = {
+			isa = PBXGroup;
+			children = (
+				8E06B2DF185113D300303423 /* NSData+Base64.h */,
+				8E06B2E0185113D300303423 /* NSData+Base64.m */,
+				8E06B2E1185113D300303423 /* OAuth+Additions.h */,
+				8E06B2E2185113D300303423 /* OAuth+Additions.m */,
+				8E06B2E3185113D300303423 /* OAuthCore.h */,
+				8E06B2E4185113D300303423 /* OAuthCore.m */,
+			);
+			path = OAuthCore;
+			sourceTree = "<group>";
+		};
 		DE4BCB58161638D4003F4A66 = {
 			isa = PBXGroup;
 			children = (
+				8E06B2DD185113D300303423 /* SMTwitterCredentials */,
 				DEE540DD176172D100A1B192 /* StackMob-v2.2.0 */,
 				DE4BCB6D161638D4003F4A66 /* NetMove */,
 				DE4BCB66161638D4003F4A66 /* Frameworks */,
@@ -158,6 +207,8 @@
 		DE4BCB66161638D4003F4A66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E06B2DB1850A41800303423 /* Twitter.framework */,
+				8E06B2D91850A3DE00303423 /* Social.framework */,
 				8E0F70D0184F1DC50007602A /* Accounts.framework */,
 				8E0F70D1184F1DC50007602A /* AdSupport.framework */,
 				8E0F70CE184F1DB80007602A /* FacebookSDK.framework */,
@@ -177,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				8E0F70C5184F1D6A0007602A /* mydatamodel.xcdatamodeld */,
+				8E06B2F41853DE9D00303423 /* Sport.h */,
+				8E06B2F51853DE9D00303423 /* Sport.m */,
 				8E0F70C7184F1D6A0007602A /* NMSignInViewController.h */,
 				8E0F70C8184F1D6A0007602A /* NMSignInViewController.m */,
 				8E0F70C9184F1D6A0007602A /* NMSignUpViewController.h */,
@@ -187,6 +240,8 @@
 				DE4BCB6E161638D4003F4A66 /* Supporting Files */,
 				DEAA26C4177A271700A6F62F /* User.h */,
 				DEAA26C5177A271700A6F62F /* User.m */,
+				8E06B2EE18538F0000303423 /* NMSelectSportsViewController.h */,
+				8E06B2EF18538F0000303423 /* NMSelectSportsViewController.m */,
 			);
 			path = NetMove;
 			sourceTree = "<group>";
@@ -346,10 +401,16 @@
 			files = (
 				DE4BCB74161638D4003F4A66 /* main.m in Sources */,
 				8E0F70CB184F1D6A0007602A /* mydatamodel.xcdatamodeld in Sources */,
+				8E06B2F018538F0000303423 /* NMSelectSportsViewController.m in Sources */,
 				DE4BCB78161638D4003F4A66 /* AppDelegate.m in Sources */,
+				8E06B2E7185113D300303423 /* NSData+Base64.m in Sources */,
 				8E0F70CD184F1D6A0007602A /* NMSignUpViewController.m in Sources */,
+				8E06B2F61853DE9D00303423 /* Sport.m in Sources */,
 				DEAA26C6177A271700A6F62F /* User.m in Sources */,
+				8E06B2EA185113D300303423 /* SMTwitterCredentials.m in Sources */,
+				8E06B2E9185113D300303423 /* OAuthCore.m in Sources */,
 				8E0F70CC184F1D6A0007602A /* NMSignInViewController.m in Sources */,
+				8E06B2E8185113D300303423 /* OAuth+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
