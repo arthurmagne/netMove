@@ -13,5 +13,6 @@
 
 @dynamic sport_name;
 @dynamic sport_id;
+@synthesize isSelected;
 
 @end

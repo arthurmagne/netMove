@@ -22,6 +22,7 @@
 		8E0F70CF184F1DB80007602A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E0F70CE184F1DB80007602A /* FacebookSDK.framework */; };
 		8E0F70D2184F1DC50007602A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E0F70D0184F1DC50007602A /* Accounts.framework */; };
 		8E0F70D3184F1DC50007602A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E0F70D1184F1DC50007602A /* AdSupport.framework */; };
+		8EFFB42F185D0D7500F4D45B /* NMSetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFB42E185D0D7500F4D45B /* NMSetLocationViewController.m */; };
 		DE4BCB68161638D4003F4A66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4BCB67161638D4003F4A66 /* UIKit.framework */; };
 		DE4BCB6A161638D4003F4A66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4BCB69161638D4003F4A66 /* Foundation.framework */; };
 		DE4BCB6C161638D4003F4A66 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4BCB6B161638D4003F4A66 /* CoreGraphics.framework */; };
@@ -63,6 +64,8 @@
 		8E0F70CE184F1DB80007602A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		8E0F70D0184F1DC50007602A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8E0F70D1184F1DC50007602A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		8EFFB42D185D0D7500F4D45B /* NMSetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMSetLocationViewController.h; sourceTree = "<group>"; };
+		8EFFB42E185D0D7500F4D45B /* NMSetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSetLocationViewController.m; sourceTree = "<group>"; };
 		DE4BCB63161638D4003F4A66 /* NetMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4BCB67161638D4003F4A66 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE4BCB69161638D4003F4A66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -242,6 +245,8 @@
 				DEAA26C5177A271700A6F62F /* User.m */,
 				8E06B2EE18538F0000303423 /* NMSelectSportsViewController.h */,
 				8E06B2EF18538F0000303423 /* NMSelectSportsViewController.m */,
+				8EFFB42D185D0D7500F4D45B /* NMSetLocationViewController.h */,
+				8EFFB42E185D0D7500F4D45B /* NMSetLocationViewController.m */,
 			);
 			path = NetMove;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				DE4BCB74161638D4003F4A66 /* main.m in Sources */,
 				8E0F70CB184F1D6A0007602A /* mydatamodel.xcdatamodeld in Sources */,
 				8E06B2F018538F0000303423 /* NMSelectSportsViewController.m in Sources */,
+				8EFFB42F185D0D7500F4D45B /* NMSetLocationViewController.m in Sources */,
 				DE4BCB78161638D4003F4A66 /* AppDelegate.m in Sources */,
 				8E06B2E7185113D300303423 /* NSData+Base64.m in Sources */,
 				8E0F70CD184F1D6A0007602A /* NMSignUpViewController.m in Sources */,

@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) NSString * sport_name;
 @property (nonatomic, retain) NSString * sport_id;
+@property BOOL isSelected;
 
 @end

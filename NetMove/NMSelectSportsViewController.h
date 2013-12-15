@@ -12,6 +12,9 @@
 
 @interface NMSelectSportsViewController : UITableViewController
 
+@property NSString* userId;
+
+- (IBAction)doneBtn:(id)sender;
 
 
 @end

@@ -11,6 +11,7 @@
 #import "StackMob.h"
 #import "SMDataStore.h"
 #import "AppDelegate.h"
+#import "NMSetLocationViewController.h"
 
 @interface NMSelectSportsViewController ()
 
@@ -23,6 +24,7 @@
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize sports = _sports;
+@synthesize userId = _userId;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -37,10 +39,14 @@
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
-
+// We know who is connected with this id,
+// In this view we need to add the selected sports to this user
+// Maybe create a new crosstable between user and sport 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"l'id récupéré est %@", self.userId);
+    
     self.managedObjectContext = [[self.appDelegate coreDataStore] contextForCurrentThread];
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
                                         init];
@@ -63,17 +69,6 @@
 
 - (void)loadSports {
 
-    
-   /* NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"sport"];
-    
-    // set any predicates or sort descriptors, etc.
-    NSLog(@" On a exécuté la requete AVANT");
-    // execute the request
-    [self.managedObjectContext executeFetchRequest:fetchRequest onSuccess:^(NSArray *results) {
-        NSLog(@" On a exécuté la requete %@",results);
-    } onFailure:^(NSError *error) {
-        NSLog(@"Error fetching: %@", error);
-    }];*/
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
@@ -134,6 +129,12 @@
     Sport *sport = [self.sports objectAtIndex:indexPath.row];
     cell.textLabel.text = sport.sport_name;
     
+    if (sport.isSelected) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
@@ -193,7 +194,63 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    Sport *sport = [self.sports objectAtIndex:indexPath.row];
+    sport.isSelected = !sport.isSelected;
+
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+- (IBAction)doneBtn:(id)sender {
+    NSMutableArray *selectedSportsTmp = [[NSMutableArray alloc] init];
+    for (Sport *sport in self.sports) {
+        if (sport.isSelected){
+            // we add the sport id
+            [selectedSportsTmp addObject:sport.sport_id];
+
+        }
+    }
+
+    // we add nil to this mutableArray
+    //[selectedSportsTmp addObject:[NSNull nil]];
+
+    NSArray *selectedSports = [NSArray arrayWithArray:selectedSportsTmp];
+    //NSArray *selectedSports = [NSArray arrayWithObjects:@"26a8ab9253f343ecbb227c2e1b6d23ba", nil];
+    
+    [[[SMClient defaultClient] dataStore] appendObjects:selectedSports toObjectWithId:self.userId inSchema:@"user" field:@"sports" onSuccess:^(NSDictionary* object, NSString *schema) {
+        // object contains the parent object dictionary
+        NSLog(@"la mise a jour des données (sports) a réussi");
+        [self performSegueWithIdentifier:@"sportSelectedSegue" sender:self];
+
+
+    } onFailure:^(NSError *error, NSString *objectId, NSString *schema) {
+        // Handle error
+        NSLog(@"la mise a jour des données (sports) a échoué");
+    }];
+
+    
+
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // [context objectWithID:objectID]; to get the full NSManagedObject
+    
+    if ([[segue identifier] isEqualToString:@"sportSelectedSegue"]) {
+        
+        // Get destination view
+        NMSetLocationViewController *setLocationView = [segue destinationViewController];
+        // pass the NSManagedObjectID (the id of our user)
+        NSLog(@"le self.userId est : %@", self.userId);
+        [setLocationView setUserId:self.userId];
+        
+    }
     
 }
 
+
 @end
+
+
+
+
+

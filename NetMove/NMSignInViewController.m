@@ -24,6 +24,8 @@
 
 @interface NMSignInViewController ()
 
+@property NSString* userId;
+
 @end
 
 @implementation NMSignInViewController
@@ -34,6 +36,7 @@
 @synthesize errorMsg = _errorMsg;
 @synthesize client = _client;
 @synthesize twitterCredentials = _twitterCredentials;
+@synthesize userId = _userId;
 
 
 - (AppDelegate *)appDelegate {
@@ -95,38 +98,6 @@
     return YES;
 }
 
-
-- (IBAction)login:(id)sender {
-    [self.client loginWithUsername:self.usernameField.text password:self.passwordField.text onSuccess:^(NSDictionary *results) {
-        
-        NSLog(@"Login Success %@",results);
-        self.errorMsg.text = @"";
-        
-        [self performSegueWithIdentifier:@"loginSegue" sender:self];
-
-        
-        /* Uncomment the following if you are using Core Data integration and want to retrieve a managed object representation of the user object.  Store the resulting object or object ID for future use.
-         
-         Be sure to declare variables you are referencing in this block with the __block storage type modifier, including the managedObjectContext property.
-         */
-        
-         // Edit entity name and predicate if you are not using the default user schema with username primary key field.
-         NSFetchRequest *userFetch = [[NSFetchRequest alloc] initWithEntityName:@"User"];
-         [userFetch setPredicate:[NSPredicate predicateWithFormat:@"username == %@", [results objectForKey:@"username"]]];
-         [self.managedObjectContext executeFetchRequest:userFetch onSuccess:^(NSArray *results) {
-         NSManagedObject *userObject = [results lastObject];
-         // Store userObject somewhere for later use
-         NSLog(@"Fetched user object: %@", userObject);
-         } onFailure:^(NSError *error) {
-         NSLog(@"Error fetching user object: %@", error);
-         }];
-         
-        
-    } onFailure:^(NSError *error) {
-        NSLog(@"Login Fail: %@",error);
-        self.errorMsg.text = @"Invalid username/password";
-    }];
-}
 - (IBAction)checkStatus:(id)sender {
     if([self.client isLoggedIn]) {
         
@@ -158,6 +129,41 @@
     }
 }
 
+
+- (IBAction)login:(id)sender {
+    [self.client loginWithUsername:self.usernameField.text password:self.passwordField.text onSuccess:^(NSDictionary *results) {
+        
+        NSLog(@"Login Success %@",results);
+        self.errorMsg.text = @"";
+        self.userId = [results objectForKey:@"username"];
+
+        [self performSegueWithIdentifier:@"loginSegue" sender:self];
+        
+        /* Uncomment the following if you are using Core Data integration and want to retrieve a managed object representation of the user object.  Store the resulting object or object ID for future use.
+         
+         Be sure to declare variables you are referencing in this block with the __block storage type modifier, including the managedObjectContext property.
+         */
+        
+         // Edit entity name and predicate if you are not using the default user schema with username primary key field.
+         NSFetchRequest *userFetch = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+         [userFetch setPredicate:[NSPredicate predicateWithFormat:@"username == %@", [results objectForKey:@"username"]]];
+         [self.managedObjectContext executeFetchRequest:userFetch onSuccess:^(NSArray *results) {
+         NSManagedObject *userObject = [results lastObject];
+
+         // Store userObject somewhere for later use
+         NSLog(@"Fetched user object: %@", userObject);
+         } onFailure:^(NSError *error) {
+         NSLog(@"Error fetching user object: %@", error);
+         }];
+         
+        
+    } onFailure:^(NSError *error) {
+        NSLog(@"Login Fail: %@",error);
+        self.errorMsg.text = @"Invalid username/password";
+    }];
+}
+
+
 /* TODO -> Same as facebook : connection at viewDidLoad OUPAS (stay logged in!)*/
 - (IBAction)btnClickHandlerTwitter:(id)sender {
     // This will usually return true if you are using the simulator, even if there are no accounts
@@ -176,6 +182,8 @@
              */
             [[SMClient defaultClient] loginWithTwitterToken:token twitterSecret:secret createUserIfNeeded:YES usernameForCreate:fullResponse[@"screen_name"] onSuccess:^(NSDictionary *result) {
                 NSLog(@"Successful Login with Twitter: %@", result);
+                self.userId = fullResponse[@"screen_name"];
+
                 // We only use the username : screen_name
                 [self performSegueWithIdentifier:@"loginSegue" sender:self];
 
@@ -210,6 +218,8 @@
                  NSLog(@"Logged in with StackMob");
                  NSLog(@"%@", user.first_name);
                  NSLog(@"%@", user.last_name);
+                 self.userId = user.username;
+
                  
                  NSDictionary *updatedNewUser = [NSDictionary dictionaryWithObjectsAndKeys:user.first_name, @"firstname", user.last_name, @"lastname", nil];
                  [[self.client dataStore] updateObjectWithId:user.username inSchema:@"user" update:updatedNewUser onSuccess:^(NSDictionary *object, NSString *schema) {
@@ -278,4 +288,25 @@
 - (IBAction)signUpBtn:(id)sender {
     self.errorMsg.text = @"";
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // [context objectWithID:objectID]; to get the full NSManagedObject
+    
+    if ([[segue identifier] isEqualToString:@"loginSegue"]) {
+     
+        // Get destination view
+        NMSelectSportsViewController *selectSportsView = [segue destinationViewController];
+        // pass the NSManagedObjectID (the id of our user)
+        NSLog(@"le self.userId est : %@", self.userId);
+        [selectSportsView setUserId:self.userId];
+        
+    }
+
+}
+
+
+
+
+
+
 @end

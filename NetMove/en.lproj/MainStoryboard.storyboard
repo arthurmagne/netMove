@@ -134,6 +134,21 @@
             </objects>
             <point key="canvasLocation" x="56" y="50"/>
         </scene>
+        <!--Set Location View Controller-->
+        <scene sceneID="aqc-8a-XAv">
+            <objects>
+                <viewController id="Rys-y9-fU5" customClass="NMSetLocationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hua-fk-BPu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FgQ-dE-CoQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q5g-R9-Eco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1091" y="42"/>
+        </scene>
         <!--Select Sports View Controller - Select your sports-->
         <scene sceneID="HNh-Jt-C9i">
             <objects>
@@ -150,11 +165,16 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Select your sports" id="Fwg-Vn-dkc">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="kIl-fA-wW5"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="kIl-fA-wW5">
+                            <connections>
+                                <action selector="doneBtn:" destination="o65-22-REE" id="he4-NO-iic"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="4os-kQ-62D" id="ghE-a1-xMW"/>
+                        <segue destination="Rys-y9-fU5" kind="push" identifier="sportSelectedSegue" id="kSI-wk-zhZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cr8-sr-qJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
