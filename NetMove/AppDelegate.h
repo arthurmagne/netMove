@@ -30,5 +30,6 @@
 @property (strong, nonatomic) SMCoreDataStore *coreDataStore;
 @property (strong, nonatomic) SMClient *client;
 @property (strong, nonatomic) ViewController *viewController;
+@property (nonatomic, strong) NSString* sharedString;
 
 @end

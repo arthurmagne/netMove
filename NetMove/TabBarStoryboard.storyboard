@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Y7S-x1-8o9">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--News Feed Table View Controller - Root View Controller-->
+        <scene sceneID="13S-h8-5nZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTf-MB-WW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="iNe-fa-nYc" userLabel="News Feed Table View Controller - Root View Controller" customClass="NMNewsFeedTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5ck-Eb-D7C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="NmR-pN-ZbW"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2935" y="-892"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QPT-47-itw">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Lm-J7-WD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="zT0-iA-ZaL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="XYO-2W-hdX"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bcQ-1W-8UQ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iNe-fa-nYc" kind="relationship" relationship="rootViewController" id="kJy-9I-VIf"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2463" y="-892"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="rZq-eS-sMK">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RpT-NJ-xpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController definesPresentationContext="YES" id="Y7S-x1-8o9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lWf-ik-Mgb"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="SpM-Ja-mLP">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zT0-iA-ZaL" kind="relationship" relationship="viewControllers" id="Awe-Tc-ibf"/>
+                        <segue destination="mcg-2d-XzL" kind="relationship" relationship="viewControllers" id="bZR-S5-Dl6"/>
+                        <segue destination="dnV-SF-pOy" kind="relationship" relationship="viewControllers" id="xKS-8r-Hia"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="1709" y="0.0"/>
+        </scene>
+        <!--Navigation Controller - Sports-->
+        <scene sceneID="R1N-Fv-ych">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CfR-CY-xfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="dnV-SF-pOy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Sports" id="Zao-OE-JJI"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xHk-oK-h7Z">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xuP-mc-W2m" kind="relationship" relationship="rootViewController" id="IRX-C1-VVR"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2463" y="5"/>
+        </scene>
+        <!--Sports View Controller - Sports-->
+        <scene sceneID="Mf2-mD-8tW">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W9Q-Hb-dr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="xuP-mc-W2m" customClass="NMSportsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vGR-N5-ot7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="xuP-mc-W2m" id="pax-WR-pDq"/>
+                            <outlet property="delegate" destination="xuP-mc-W2m" id="X8e-QB-aQP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sports" id="KtS-kz-Gdn"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2959" y="5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="W7G-w6-6Iw">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wdg-BX-h1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="mcg-2d-XzL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="gpw-cS-w27"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t1y-kG-C48">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OVX-Sl-JJf" kind="relationship" relationship="rootViewController" id="VFC-en-jtK"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2463" y="767"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="5uJ-oE-rdq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lU8-3N-6Zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="OVX-Sl-JJf" customClass="NMMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rt7-gG-kYK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ppl-C8-Qxt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GuU-Aa-CCc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bh3-ol-fZB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wlc-BJ-gGV"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2975" y="767"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

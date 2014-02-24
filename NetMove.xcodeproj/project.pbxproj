@@ -22,7 +22,13 @@
 		8E0F70CF184F1DB80007602A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E0F70CE184F1DB80007602A /* FacebookSDK.framework */; };
 		8E0F70D2184F1DC50007602A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E0F70D0184F1DC50007602A /* Accounts.framework */; };
 		8E0F70D3184F1DC50007602A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E0F70D1184F1DC50007602A /* AdSupport.framework */; };
+		8EC5B01718B961F8003C275A /* NMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5B01618B961F8003C275A /* NMMapViewController.m */; };
+		8EC5B01A18BA3C6B003C275A /* NMNewsFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5B01918BA3C6B003C275A /* NMNewsFeedTableViewController.m */; };
+		8EC5B01D18BB7A13003C275A /* NMSportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5B01C18BB7A13003C275A /* NMSportsViewController.m */; };
+		8EC5B02018BB97C2003C275A /* TabBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC5B01F18BB97C2003C275A /* TabBarStoryboard.storyboard */; };
 		8EFFB42F185D0D7500F4D45B /* NMSetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFB42E185D0D7500F4D45B /* NMSetLocationViewController.m */; };
+		8EFFB431185E05A900F4D45B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFFB430185E05A900F4D45B /* MapKit.framework */; };
+		8EFFB434185E196600F4D45B /* NMMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFB433185E196600F4D45B /* NMMapAnnotation.m */; };
 		DE4BCB68161638D4003F4A66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4BCB67161638D4003F4A66 /* UIKit.framework */; };
 		DE4BCB6A161638D4003F4A66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4BCB69161638D4003F4A66 /* Foundation.framework */; };
 		DE4BCB6C161638D4003F4A66 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4BCB6B161638D4003F4A66 /* CoreGraphics.framework */; };
@@ -64,8 +70,18 @@
 		8E0F70CE184F1DB80007602A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		8E0F70D0184F1DC50007602A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8E0F70D1184F1DC50007602A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		8EC5B01518B961F8003C275A /* NMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMMapViewController.h; sourceTree = "<group>"; };
+		8EC5B01618B961F8003C275A /* NMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMMapViewController.m; sourceTree = "<group>"; };
+		8EC5B01818BA3C6B003C275A /* NMNewsFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMNewsFeedTableViewController.h; sourceTree = "<group>"; };
+		8EC5B01918BA3C6B003C275A /* NMNewsFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMNewsFeedTableViewController.m; sourceTree = "<group>"; };
+		8EC5B01B18BB7A13003C275A /* NMSportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMSportsViewController.h; sourceTree = "<group>"; };
+		8EC5B01C18BB7A13003C275A /* NMSportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSportsViewController.m; sourceTree = "<group>"; };
+		8EC5B01F18BB97C2003C275A /* TabBarStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBarStoryboard.storyboard; sourceTree = "<group>"; };
 		8EFFB42D185D0D7500F4D45B /* NMSetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMSetLocationViewController.h; sourceTree = "<group>"; };
 		8EFFB42E185D0D7500F4D45B /* NMSetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSetLocationViewController.m; sourceTree = "<group>"; };
+		8EFFB430185E05A900F4D45B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8EFFB432185E196600F4D45B /* NMMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMMapAnnotation.h; sourceTree = "<group>"; };
+		8EFFB433185E196600F4D45B /* NMMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMMapAnnotation.m; sourceTree = "<group>"; };
 		DE4BCB63161638D4003F4A66 /* NetMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4BCB67161638D4003F4A66 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE4BCB69161638D4003F4A66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -144,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFFB431185E05A900F4D45B /* MapKit.framework in Frameworks */,
 				8E06B2DC1850A41800303423 /* Twitter.framework in Frameworks */,
 				8E06B2DA1850A3DE00303423 /* Social.framework in Frameworks */,
 				8E0F70D2184F1DC50007602A /* Accounts.framework in Frameworks */,
@@ -188,6 +205,20 @@
 			path = OAuthCore;
 			sourceTree = "<group>";
 		};
+		8EC5B01E18BB9793003C275A /* TabBarGroup */ = {
+			isa = PBXGroup;
+			children = (
+				8EC5B01518B961F8003C275A /* NMMapViewController.h */,
+				8EC5B01618B961F8003C275A /* NMMapViewController.m */,
+				8EC5B01818BA3C6B003C275A /* NMNewsFeedTableViewController.h */,
+				8EC5B01918BA3C6B003C275A /* NMNewsFeedTableViewController.m */,
+				8EC5B01B18BB7A13003C275A /* NMSportsViewController.h */,
+				8EC5B01C18BB7A13003C275A /* NMSportsViewController.m */,
+				8EC5B01F18BB97C2003C275A /* TabBarStoryboard.storyboard */,
+			);
+			name = TabBarGroup;
+			sourceTree = "<group>";
+		};
 		DE4BCB58161638D4003F4A66 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +241,7 @@
 		DE4BCB66161638D4003F4A66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8EFFB430185E05A900F4D45B /* MapKit.framework */,
 				8E06B2DB1850A41800303423 /* Twitter.framework */,
 				8E06B2D91850A3DE00303423 /* Social.framework */,
 				8E0F70D0184F1DC50007602A /* Accounts.framework */,
@@ -230,6 +262,7 @@
 		DE4BCB6D161638D4003F4A66 /* NetMove */ = {
 			isa = PBXGroup;
 			children = (
+				8EC5B01E18BB9793003C275A /* TabBarGroup */,
 				8E0F70C5184F1D6A0007602A /* mydatamodel.xcdatamodeld */,
 				8E06B2F41853DE9D00303423 /* Sport.h */,
 				8E06B2F51853DE9D00303423 /* Sport.m */,
@@ -247,6 +280,8 @@
 				8E06B2EF18538F0000303423 /* NMSelectSportsViewController.m */,
 				8EFFB42D185D0D7500F4D45B /* NMSetLocationViewController.h */,
 				8EFFB42E185D0D7500F4D45B /* NMSetLocationViewController.m */,
+				8EFFB432185E196600F4D45B /* NMMapAnnotation.h */,
+				8EFFB433185E196600F4D45B /* NMMapAnnotation.m */,
 			);
 			path = NetMove;
 			sourceTree = "<group>";
@@ -394,6 +429,7 @@
 				DE4BCB7B161638D4003F4A66 /* MainStoryboard.storyboard in Resources */,
 				DEE5C406162F2BEE0024001B /* Default-568h@2x.png in Resources */,
 				DEE54115176172D100A1B192 /* CHANGELOG.md in Resources */,
+				8EC5B02018BB97C2003C275A /* TabBarStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,17 +440,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC5B01D18BB7A13003C275A /* NMSportsViewController.m in Sources */,
 				DE4BCB74161638D4003F4A66 /* main.m in Sources */,
 				8E0F70CB184F1D6A0007602A /* mydatamodel.xcdatamodeld in Sources */,
 				8E06B2F018538F0000303423 /* NMSelectSportsViewController.m in Sources */,
 				8EFFB42F185D0D7500F4D45B /* NMSetLocationViewController.m in Sources */,
+				8EFFB434185E196600F4D45B /* NMMapAnnotation.m in Sources */,
 				DE4BCB78161638D4003F4A66 /* AppDelegate.m in Sources */,
 				8E06B2E7185113D300303423 /* NSData+Base64.m in Sources */,
 				8E0F70CD184F1D6A0007602A /* NMSignUpViewController.m in Sources */,
 				8E06B2F61853DE9D00303423 /* Sport.m in Sources */,
 				DEAA26C6177A271700A6F62F /* User.m in Sources */,
+				8EC5B01718B961F8003C275A /* NMMapViewController.m in Sources */,
 				8E06B2EA185113D300303423 /* SMTwitterCredentials.m in Sources */,
 				8E06B2E9185113D300303423 /* OAuthCore.m in Sources */,
+				8EC5B01A18BA3C6B003C275A /* NMNewsFeedTableViewController.m in Sources */,
 				8E0F70CC184F1D6A0007602A /* NMSignInViewController.m in Sources */,
 				8E06B2E8185113D300303423 /* OAuth+Additions.m in Sources */,
 			);
@@ -516,6 +556,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetMove/NetMove-Prefix.pch";
 				INFOPLIST_FILE = "NetMove/NetMove-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/StackMob-v2.2.0\"",
@@ -537,6 +578,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetMove/NetMove-Prefix.pch";
 				INFOPLIST_FILE = "NetMove/NetMove-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/StackMob-v2.2.0\"",

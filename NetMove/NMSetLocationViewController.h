@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import <CoreData/CoreData.h>
 
-@interface NMSetLocationViewController : UIViewController
+@interface NMSetLocationViewController : UIViewController <MKMapViewDelegate>
 
 @property NSString* userId;
+
+
+- (IBAction)getCurrentLocation:(id)sender;
+- (IBAction)getLocationWithAdress:(id)sender;
+- (IBAction)updateUserLocation:(id)sender;
+
 
 @end
